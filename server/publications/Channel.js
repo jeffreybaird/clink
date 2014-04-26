@@ -1,4 +1,4 @@
-Meteor.publish('Channel', function () {
+Meteor.publish('channel', function () {
     return Channel.find();
 });
 

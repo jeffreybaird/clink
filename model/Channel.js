@@ -1,4 +1,4 @@
-Channel = new Meteor.Collection2('Channel', { 'schema' : {} });
+Channel = new Meteor.Collection2('channel', { 'schema' : {} });
 
 // Collection2 already does schema checking
 // Add custom permission rules if needed

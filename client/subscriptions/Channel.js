@@ -1,2 +1,2 @@
-Meteor.subscribe('Channel');
+Meteor.subscribe('channel');
 
