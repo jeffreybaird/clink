@@ -6,3 +6,27 @@ tml {
 .login-buttons-dropdown-align-right {
     float: right;
 }
+
+.chat-box{
+  border: grey;
+  border-style:solid;
+  border-width:20px;
+  border-radius: 10px;
+  background-color:#E6E6E6;
+}
+
+.chat-messages{
+  border: grey;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.message-submit{
+  border: grey;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.main{
+  background-color:#59D6FF;
+}
