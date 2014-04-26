@@ -3,7 +3,7 @@ Chat = new Meteor.Collection2('chat', {
         name: {
             type: String,
             max: 200,
-            option: true
+            optional: true
         }
     })
 });
