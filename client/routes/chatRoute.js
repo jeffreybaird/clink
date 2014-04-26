@@ -1,25 +1,20 @@
 var ChatController = RouteController.extend({
     template: 'chat',
-   /* data : function () {
-        return Chat.insert({name: "Ulysses"}, function(error, result) {
-        	console.log(error,result);
-  //The insert will fail, error will be set,
-  //and result will be undefined or false because "copies" is required.
-  //
-  //The list of errors is available by calling Books.simpleSchema().namedContext().invalidKeys()
-		});
-    },*/
-    createChat : function (chatName) {
+    findOrCreateChat : function (chatName) {
+      chat = Chat.findOne({name: this.params.name});
+      if(chat){
+        return chat
+      }else{
         return Chat.insert({name: chatName}, function(error, result) {
-        	console.log(error,result);
-		});
+          console.log(error,result);
+        });
+      }
     }
-});
-
+  });
 Router.map(function () {
     this.route('chat', {
-        path : '/c/:_id',
-        data : function() { return this.createChat(this.params._id); },
+        path :  '/c/:name',
+        data : function() { return this.findOrCreateChat(this.params.name); },
         controller :  ChatController
     });
 });
