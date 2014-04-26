@@ -1,5 +1,7 @@
 <template name="chat">
     <strong>{{name}}</strong><br>
-    <p>Template chat FOOO</p>
+    {{#each messages}}
+      {{message}}<br>
+    {{/each}}
+    <p>Message: <input type="text" id="message"></p>
 </template>
-
