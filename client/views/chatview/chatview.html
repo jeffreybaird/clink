@@ -1,4 +1,74 @@
-<template name="chatview">
-    <p>Template chatview</p>
+
+<head>
+  <title>Chat app</title>
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  
+    <div class="header-container">
+      <div class="wrapper clearfix">
+        <h1>Chatapp</h1>
+        {{> welcome }}
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="wrapper clearfix">
+        <div class="main">
+        <ul>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        	<li><strong>Anonymous:</strong> Message</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+    <!-- <div class="footer-container">
+      <div class="wrapper footer">
+        
+      </div>
+    </div> -->
+    <div class="messages-container">
+      <div class="wrapper clearfix">
+          {{> input }}
+      </div>
+    </div>
+</body>
+
+<template name="welcome">
+    Welcome to Clink!
+</template>
+
+<template name="messages">
+  {{#each messages}}
+    <strong>{{name}}:</strong> {{message}}<br>
+  {{/each}}
+</template>
+
+<template name="input">
+ <input type="text" id="message" placeholder="message">
 </template>
 
