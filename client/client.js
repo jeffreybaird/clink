@@ -1,5 +1,5 @@
 Template.messages.messages = function(){
-  return Messages.find({channel: "fakechannel"},{ sort: {time: 1}});
+  return Messages.find({},{ sort: {time: 1}});
 }
 
 Template.input.events = {
@@ -13,7 +13,6 @@ Template.input.events = {
           name: name,
           message: message.value,
           time: Date.now(),
-          channel: "fakechannel",
         });
 
         document.getElementById('message').value = '';
