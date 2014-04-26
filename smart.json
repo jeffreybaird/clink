@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "iron-router": {},
+    "handlebar-helpers": {},
+    "iron-router-progress": {},
+    "semantic-ui": {},
+    "collection2": {}
+  }
+}
