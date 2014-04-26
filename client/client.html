@@ -3,24 +3,10 @@
 </head>
 
 <body>
-  <div class="main">
-    <div class="pure-g-r">
-      <div class="pure-u-1-5"></div>
-      <div class="pure-u-3-5">
-        <h1>Chatapp</h1>
-        {{> welcome }}
-        <div class="chat-box">
-          <div class="chat-messages">
-            {{> messages }}
-          </div>
-          <div class="message-submit">
-            {{> input }}
-          </div>
-        </div>
-      </div>
-      <div class="pure-u-1-5"></div>
-    </div>
-  </div>
+  <h1>Chatapp</h1>
+  {{> welcome }}
+  {{> input }}
+  {{> messages }}
 </body>
 
 <template name="welcome">
@@ -36,7 +22,5 @@
 </template>
 
 <template name="input">
-  <form class="pure-form pure-form-aligned">
-    <p>Message: <input type="text" class="pure-input-1-2" id="message"></p>
-  </form>
+  <p>Message: <input type="text" id="message"></p>
 </template>
