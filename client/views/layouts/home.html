@@ -1,0 +1,11 @@
+<template name="homeLayout">
+    <div class="app-wrap">
+        <div id="main">
+            {{> yield}}
+            {{! Also a sidebar! }}
+        </div>
+        <footer>
+            {{> yield region='footer'}}
+        </footer>
+    </div>
+</template>
