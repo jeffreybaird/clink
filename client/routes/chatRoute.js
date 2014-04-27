@@ -5,6 +5,7 @@ var ChatController = RouteController.extend({
       Meteor.subscribe('chat', chatName, function(){
         // Once the data has loaded, set the session as true to indicate that the data have been loaded
         Session.set('chats_loaded', true);
+
       });
 
       if (Session.get('chats_loaded')) {

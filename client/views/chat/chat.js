@@ -30,7 +30,9 @@ Template['chat'].events({
   },
   'keydown #nickname' : function (event) {
     if (event.which == 13 ) {
-      Session.set("nickname", document.getElementById('nickname').value);
+      var nickname = $('#nickname').val();
+      Session.set("nickname", nickname);
+      ReactiveStore.set("clink-nickname", nickname);
     }
   },
   'blur #nickname' : function (event) {
