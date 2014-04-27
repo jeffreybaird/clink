@@ -10,6 +10,10 @@ Chat = new Meteor.Collection2('chat', {
         },
         "messages.$.message": {
           type: String,
+        },
+        "messages.$.time":{
+          type: Date,
+          optional: true
         }
     })
 });

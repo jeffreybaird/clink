@@ -15,16 +15,36 @@ div.msg-container{
 div.msg-inner-container{
 	
 }
-div.usr{
+/*div.usr{
 	float:left;
 	padding: 10px;
+	width: 20%;
+	max-width: 20%;
+	@media only screen and (min-width: 480px) {
 	width:15%;
-}
-div.msg{
-	float:left;
-	width:85%;
-}
+	}
+	@media only screen and (min-width: 1140px) {
+	width:10%;
+	}
+}*/
 div.usr-nm{
+	padding-right:20px;
+}
+/*div.msg{
+	float:left;
+	width:80%;
+	max-width: 80%;
+	@media only screen and (min-width: 480px) {
+	width:85%;
+	}
+	@media only screen and (min-width: 1140px) {
+	width:90%;
+	}
+}*/
+div.usr-nm{
+	color: #222;
+	text-transform: uppercase;
+	font-size: 12px;
 }
 div.msgs{
 	padding: 0 0 0 0 ;
@@ -34,7 +54,8 @@ div.msgid-container{
 	width: 100%;
 }
 div.msgid{
-	padding: 10px;
+	font-size: 16px;
+	padding: 2px;
 }
 div.msgid:hover{
 	background: #eee;
@@ -45,12 +66,35 @@ div.msgid:hover{
 
 
 #chat-message-input-container{
-    margin: 20px 0 0;
+	position: fixed;
+	bottom: 0;
     z-index: 1px;
 }
+#chat-message-input{
+	
+}
 #chat-message-input input{
-    width:100%;
     padding: 10px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    width:80%;
+    float:left;
+}
+#chat-nickname-input-container{
+	width:50%;
+	position: fixed;
+	top:50%;
+	left:50%;
+
+}
+#chat-nickname-input{
+
+}
+#chat-nickname-input input{
+	width:100%;
+	padding: 10px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;

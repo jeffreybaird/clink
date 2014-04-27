@@ -20,12 +20,12 @@ Template['chat'].events({
       var name = Session.get('nickname') || document.getElementById('nickname').value ;
       var message = document.getElementById('message');
       if (message.value != '') {
-        Chat.update({_id: Session.get("id")}, {$push:{messages:{name: name, message: message.value}}});
+        Chat.update({_id: Session.get("id")}, {$push:{messages:{name: name, message: message.value, time: new Date}}});
         document.getElementById('message').value = '';
         message.value = '';
       }
       var ourLastChatRecord = $('.msg-container').last();
-      $('.messages-container').animate({scrollTop: $('.msg-container').last().offset().top});
+      $('.messages-container').animate({scrollTop: $('.msg-container').last().offset().top -200});
     }
   },
   'keydown #nickname' : function (event) {
@@ -43,8 +43,11 @@ Template['chat'].events({
 Template.chat.rendered = function () {
      $(window).resize(function(){
       var ourWindowHeight = $(window).height();
-      console.log(ourWindowHeight);
-      $('.messages-container').css("height", ourWindowHeight - 250);
+      $('.messages-container').css("height", ourWindowHeight);
+    });
+    $('#message').focus();
+    $('.toggle-name-input').click(function(e) {
+      e.preventDefault();
+      $('.chat-options').toggleClass('hide');
     });
 }
-

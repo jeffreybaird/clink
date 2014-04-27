@@ -37,6 +37,10 @@
     background-color: #da1717;
     border-color: #da1717;
 }
+.input-group-btn.btn.add-message {
+    border-radius: 0;
+    height: 75px;
+}
 
 /* -------------------
     Main Content
@@ -46,6 +50,14 @@ body, #main {
     margin: 0px;
     padding: 0px;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+header {
+    background-color: #fff;
+    padding: 10px 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
 }
 
 #main {
@@ -70,8 +82,58 @@ a {
 .ui.header {
     font-family: 'Glegoo', serif;
 }
-.logo-wrap {
-    padding: 20px;
+.room-display-name {
+    color: #EF412D;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding: 10px 0 0;
+}
+.line-item{
+    background: #FFF;
+    /*border-left: 15px solid #5BC0DE;*/
+    border-left: 15px solid #ccc;
+    margin-bottom: 1px;
+    overflow: hidden;
+    padding: 20px 10px 10px 30px;
+}
+.new-message-wrap {
+    background: #FFF;
+    border-left: 15px solid #222;
+    overflow: hidden;
+}
+.messages-container {
+     background-color: #eee;
+     margin-bottom: 75px;
+     padding: 1px 0 0;
+}
+.user-message {
+    background-color: #f9f9f9;
+}
+.message-timestamp {
+    color: #aaa;
+    font-weight: 400;
+}
+.form-control.simple {
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    height: 75px;
+    -webkit-box-shadow: none;
+     box-shadow: none; 
+}
+.input-group-addon:first-child,
+.input-group,
+.form-control {
+    border-radius: 0;
+}
+.no-margin {
+    margin: 0;
+}
+.nav-link {
+    display: inline-block;
+    padding: 10px 0 0;
 }
 /* -------------------
     Homepage Hero
@@ -130,9 +192,5 @@ a {
 .app-wrap {
 }
 .inner-app-wrap {
-    background: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
-    padding: 20px;
+    margin-top: 75px;
 }
