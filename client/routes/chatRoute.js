@@ -8,19 +8,28 @@ var ChatController = RouteController.extend({
 
             });
 
-            if (Session.get('chats_loaded')) {
-                chat = Chat.findOne({name: chatName});
-                if(typeof chat == "undefined"){
-                    chat = Chat.insert({name: chatName, messages: [{name:"The Clinkbot", message:"Welcome to the chatroom!"}]}, function(error, result) {
-                     // console.log(error,result);
-                    });
-                }
-                Session.set("id", chat._id);
-                chat.davids = [{name: 'david was here'},{name: 'david was there'},{name:'david is gone'}];
-                return chat;
-            }
+      if (Session.get('chats_loaded')) {
+        chat = Chat.findOne({name: chatName});
+        messages = chat.messages
+        var users = []
+        for (var i = 0; i < messages.length; i++) {
+          if($.inArray(messages[i].name, users) < 0){
+           users.push(messages[i].name)
+          }
+        };
+        console.log(users)
+
+        if(typeof chat == "undefined"){
+          chat = Chat.insert({name: chatName, messages: [{name:"The Clinkbot", message:"Welcome to the chatroom!"}]}, function(error, result) {
+            console.log(error,result);
+          });
         }
-    });
+        Session.set("id", chat._id);
+        chat.numberOfUsers = users.length
+        return chat;
+      }
+    }
+  });
 
 Router.map(function () {
         this.route('chat', {

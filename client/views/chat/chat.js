@@ -47,11 +47,7 @@ Template.chat.rendered = function () {
         $('#nickname').val('Anonymous');
     }
 
-    // resize
-     $(window).resize(function(){
-        var ourWindowHeight = $(window).height();
-        $('.messages-container').css("height", ourWindowHeight);
-    });
+
     $('#message').focus();
     $('.toggle-name-input').click(function(e) {
         e.preventDefault();
