@@ -16,6 +16,8 @@ Template['chat'].events({
         message.value = '';
       }
     }
+    var ourLastChatRecord = $('.msg-container').last();
+    $('.messages-container').animate({scrollTop: $('.msg-container').last().offset().top});
   }
 });
 
