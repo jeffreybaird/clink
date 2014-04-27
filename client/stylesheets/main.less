@@ -1,0 +1,112 @@
+// General styles, e. g. for the body tag
+@import 'variables';
+@import 'elements';
+
+/* -------------------
+    Idioms
+   ------------------- */
+.center {
+    text-align: center;
+}
+.upper {
+    text-transform: uppercase;
+}
+.btn-xlrg {
+    font-size: 30px;
+    padding: 20px 100px;
+}
+.btn-punch {
+    color: #ffffff;
+    background-color: #00768c;
+    border-color: #00768c;
+    border-radius: 0;
+}
+.btn-punch:hover {
+    color: #ffffff;
+    background-color: #da1717;
+    border-color: #da1717;
+}
+
+/* -------------------
+    Main Content
+   ------------------- */
+
+body, #main {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+#main {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    transition: 0.3s color;
+
+    &:hover {
+        color: @primaryLinkHoverColor;
+    }
+}
+
+.icon {
+    &.orange {
+        color: @html5Orange;
+    }
+}
+
+.ui.header {
+    font-family: 'Glegoo', serif;
+}
+.logo-wrap {
+    padding: 20px;
+}
+/* -------------------
+    Homepage Hero
+   ------------------- */
+.hero {
+   background: url('images/background/hero_01.jpg') 0 0; 
+   color: #fff;
+   height: 400px;
+   margin-bottom: 50px;
+   padding: 100px 0 0;
+   text-shadow: 0 1px 60px #000;
+}
+.hero h1 {
+    font-size: 50px;
+}
+
+/* -------------------
+    Footer
+   ------------------- */
+.padding-wrapper.footer {
+    border-radius: 0px;
+
+    a:hover {
+        color: @secondaryLinkHoverColor;
+    }
+}
+
+/* -------------------
+    Progress bar
+   ------------------- */
+
+#iron-router-progress {
+    background-color : #00768c;
+    box-shadow       : 0 0 5px #016f83;
+}
+
+#iron-router-progress.spinner:before {
+    border-color : #dfdfdf;
+}
+
+.app-wrap {
+}
+.inner-app-wrap {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 20px;
+}

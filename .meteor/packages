@@ -4,5 +4,13 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
-insecure
+less
+jquery
+underscore
+handlebar-helpers
+iron-router
+accounts-password
+accounts-ui
+iron-router-progress
+semantic-ui
+collection2

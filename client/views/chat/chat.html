@@ -1,0 +1,10 @@
+<template name="chat">
+    <strong>{{nickname}} @ {{name}}</strong><br>
+    {{#each messages}}
+      <strong>{{name}}</strong> {{message}}<br>
+    {{/each}}
+    <div>
+    <p>Message: <input type="text" id="message"></p>
+    <p>Nickname: <input type="text" id="nickname" value="{{nickname}}"></p>
+    </div>
+</template>

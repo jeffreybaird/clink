@@ -1,0 +1,14 @@
+<template name="basicLayout">
+    <div class="app-wrap">
+        <header>
+            {{> yield region='header'}}
+        </header>
+        <div id="main">
+            {{> yield}}
+            {{! Also a sidebar! }}
+        </div>
+        <footer>
+            {{> yield region='footer'}}
+        </footer>
+    </div>
+</template>
