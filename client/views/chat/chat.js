@@ -68,15 +68,13 @@ Template.chat.extras = {
     enterMessage: function() {
         var nickname = Session.get("nickname");
         var message = $('#message').val();
+        // Strip out HTML tags
+        message = message.replace(/(<([^>]+)>)/ig,"");
         if (message != '') {
             Chat.update({_id: Session.get("id")}, {$push:{messages:{name: nickname, message: message, time: new Date}}});
-            $('#message').val('');  // reset the message
             var ourLastChatRecord = $('.msg-container').last();
-            // $('.messages-container').animate();
-            // console.log($('.messages-container').height());
-            // $(".messages-container").scrollTop($('.messages-container').attr("scrollHeight"));
-            // var messageContainer = $('.messages-container');
-            // messageContainer.scrollTop(messageContainer.prop("scrollHeight"));
         }
+        $('#message').val('');  // reset the message
+
     }
 };
