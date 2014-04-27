@@ -75,7 +75,7 @@ Template.chat.rendered = function () {
         if (window.enableAutoscroll) {
             $("html, body").animate({ scrollTop: $(document).height()-$(window).height() })
         }
-    }, 1000);
+    }, 1500);
 }
 
 Template.chat.extras = {
