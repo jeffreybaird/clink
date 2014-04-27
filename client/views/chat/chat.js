@@ -67,7 +67,7 @@ Template.chat.extras = {
         $('.chat-options').addClass('hide');    // hide the options
     },
     enterMessage: function() {
-        var nickname = Session.get("nickname");
+        var nickname = Session.get("nickname") || "Anonymous";
         var message = $('#message').val();
         // Strip out HTML tags
         message = message.replace(/(<([^>]+)>)/ig,"");
