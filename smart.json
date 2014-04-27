@@ -5,6 +5,7 @@
     "iron-router-progress": {},
     "semantic-ui": {},
     "collection2": {},
-    "reactive-store": {}
+    "reactive-store": {},
+    "bootboxjs": {}
   }
 }
