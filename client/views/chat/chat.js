@@ -23,9 +23,14 @@ Template['chat'].events({
         Chat.update({_id: Session.get("id")}, {$push:{messages:{name: name, message: message.value, time: new Date}}});
         document.getElementById('message').value = '';
         message.value = '';
+        var ourLastChatRecord = $('.msg-container').last();
+        // $('.messages-container').animate();
+        // console.log($('.messages-container').height());
+        // $(".messages-container").scrollTop($('.messages-container').attr("scrollHeight"));
+        // var messageContainer = $('.messages-container');
+        // messageContainer.scrollTop(messageContainer.prop("scrollHeight"));
+
       }
-      var ourLastChatRecord = $('.msg-container').last();
-      $('.messages-container').animate({scrollTop: $('.msg-container').last().offset().top -200});
     }
   },
   'keydown #nickname' : function (event) {
