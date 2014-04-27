@@ -10,7 +10,7 @@ var ChatController = RouteController.extend({
             console.log(error,result);
           });
         }
-        Session.set("name", chat.name);
+        Session.set("id", chat._id);
         return chat;
       }
     }

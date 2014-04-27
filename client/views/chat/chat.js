@@ -11,7 +11,7 @@ Template['chat'].events({
       var name = 'Anonymous';
       var message = document.getElementById('message');
       if (message.value != '') {
-        Chat.update({_id: Session.get("name")}, {$push:{messages:{message: message.value}}});
+        Chat.update({_id: Session.get("id")}, {$push:{messages:{message: message.value}}});
         document.getElementById('message').value = '';
         message.value = '';
       }
