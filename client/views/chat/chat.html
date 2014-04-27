@@ -1,52 +1,52 @@
 <template name="chat">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-12">
-				<h1 class="room-display-name center">{{name}}</h1>
-			</div>
-			<div class="col-sm-2">
-				<div><input class="form-control" type="text" id="nickname" placeholder="{{nickname}}"></div>
-			</div>
-		</div>
-		<div class="inner-app-wrap">
-			<div class="messages-container">
-				<div class="messages">
-				    {{#each messages}}
-					    <div class="msg-container">
-					    	<div class="msg-inner-container">
-					    		<div class="line-item">
-					    			<div class="usr">
-					    				<div>
-										    <div class="usr-nm">
-										    	<strong>{{name}}:</strong>
-							  				</div>
-							  			</div>
-							  		</div>
-							  		<div class="msg">
-						  				<div class="msgid-container">
-									    	<div class="msgid">
-									      		{{message}}
-									      	</div>
-									     </div>
-					    			</div>
-					    		</div>
-					    	</div>
-					    </div>
-				    {{/each}}
+			<div class="inner-app-wrap">
+				<div class="input-group chat-options hide">
+				  <span class="input-group-addon">Display name</span>
+				  <input class="form-control update-name" type="text" id="nickname" placeholder="{{nickname}}">
 				</div>
-			</div>
-			<div id="chat-message-input-container">
-				<div class="row">
-					<div class="col-sm-12">
-					<div class="input-group">
-							<input class="form-control" id="message" placeholder="Message">
-							<span class="input-group-btn">
-								<button class="btn btn-info" type="button"><strong>Send</strong></button>
-							</span>
-						</div>
+				
+				<div class="messages-container">
+					<div class="messages">
+					    {{#each messages}}
+						    <div class="msg-container">
+						    	<div class="msg-inner-container">
+						    		<div class="line-item">
+						    			<div class="usr">
+						    				<div>
+											    <div class="usr-nm">
+											    	<strong><em>{{name}}</em></strong>
+								  				</div>
+								  			</div>
+								  		</div>
+								  		<div class="msg">
+							  				<div class="msgid-container">
+										    	<div class="msgid">
+										      		<label class="label message-timestamp upper">12:17am </label>{{message}}
+										      	</div>
+										     </div>
+						    			</div>
+						    		</div>
+						    	</div>
+						    </div>
+					    {{/each}}
 					</div>
 				</div>
-  			</div>
+				<div id="chat-message-input-container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="input-group input-group-lg new-message-wrap">
+								<!-- <input class="form-control simple user-message" id="message" placeholder="Message"> -->
+								<textarea id="message" class="form-control simple" rows="5"></textarea>
+								<span class="input-group-btn">
+									<button class="btn btn-punch add-message" style="height: 75px; border-radius: 0;" type="button"><strong>Send</strong></button>
+								</span>
+							</div>
+						</div>
+					</div>
+	  			</div>
+			</div>
 		</div>
 	</div>
 </template>

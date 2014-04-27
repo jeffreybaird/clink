@@ -25,7 +25,7 @@ Template['chat'].events({
         message.value = '';
       }
       var ourLastChatRecord = $('.msg-container').last();
-      $('.messages-container').animate({scrollTop: $('.msg-container').last().offset().top});
+      $('.messages-container').animate({scrollTop: $('.msg-container').last().offset().top -200});
     }
   },
   'keydown #nickname' : function (event) {
@@ -43,8 +43,11 @@ Template['chat'].events({
 Template.chat.rendered = function () {
      $(window).resize(function(){
       var ourWindowHeight = $(window).height();
-      console.log(ourWindowHeight);
-      $('.messages-container').css("height", ourWindowHeight - 250);
+      $('.messages-container').css("height", ourWindowHeight -350);
+    });
+    $('#message').focus();
+    $('.toggle-name-input').click(function(e) {
+      e.preventDefault();
+      $('.chat-options').toggleClass('hide');
     });
 }
-
