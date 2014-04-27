@@ -9,12 +9,12 @@ var ChatController = RouteController.extend({
             });
 
       if (Session.get('chats_loaded')) {
-        chat = Chat.findOne({name: chatName});
-        messages = chat.messages
-        var users = []
+        var chat = Chat.findOne({name: chatName});
+        var messages = chat.messages;
+        var users = [];
         for (var i = 0; i < messages.length; i++) {
           if($.inArray(messages[i].name, users) < 0){
-           users.push(messages[i].name)
+           users.push(messages[i].name);
           }
         };
 
