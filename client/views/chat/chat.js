@@ -4,6 +4,15 @@ Template['chat'].helpers({
   },
   nickname: function(){
     return Session.get('nickname') || 'Anonymous'
+  },
+  prettyTime: function(datetime){
+    if(typeof datetime === 'object'){
+      var minutes = (datetime.getMinutes()<10 ?'0':'') + datetime.getMinutes()
+      return "" + datetime.getHours() + ":" + minutes
+      }
+    else{
+      return datetime
+    }
   }
 });
 
