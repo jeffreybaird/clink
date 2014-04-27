@@ -1,7 +1,7 @@
 Template['home'].helpers({
   url: function(){
     var hex = Math.floor(Math.random() * 1000000000).toString(16);
-    return "http://clink.meteor.com/" + hex
+    return "http://clink.meteor.com/c/" + hex
   },
 });
 
