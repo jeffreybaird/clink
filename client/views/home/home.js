@@ -3,7 +3,7 @@ Template['home'].helpers({
     var hex = Math.floor(Math.random() * 10000000).toString(16);
 
     hostname = window.location.hostname;
-    if (hostname != 'clinkit.co') {
+    if (hostname != 'clinkit.co' && hostname != 'clink.meteor.com') {
         hostname = hostname + ":3000";
     }
 
