@@ -30,6 +30,9 @@ Template['chat'].events({
     if (event.which == 13 ) {
       Session.set("nickname", document.getElementById('nickname').value);
     }
+  },
+  'blur #nickname' : function (event) {
+    Session.set("nickname", document.getElementById('nickname').value || 'Anonymous');
   }
 });
 
