@@ -17,7 +17,6 @@ var ChatController = RouteController.extend({
            users.push(messages[i].name)
           }
         };
-        console.log(users)
 
         if(typeof chat == "undefined"){
           chat = Chat.insert({name: chatName, messages: [{name:"The Clinkbot", message:"Welcome to the chatroom!"}]}, function(error, result) {
