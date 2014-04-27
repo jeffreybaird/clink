@@ -43,7 +43,7 @@ Template['chat'].events({
 Template.chat.rendered = function () {
      $(window).resize(function(){
       var ourWindowHeight = $(window).height();
-      $('.messages-container').css("height", ourWindowHeight -350);
+      $('.messages-container').css("height", ourWindowHeight);
     });
     $('#message').focus();
     $('.toggle-name-input').click(function(e) {
