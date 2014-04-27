@@ -69,7 +69,7 @@ Template.chat.rendered = function () {
         var docHeight = $(document).height();
 
 //         console.log("H" + height + " DH:" +  docHeight + " WH:" + winHeight);
-        if (docHeight - height > 900) {
+        if (docHeight - height > 850) {
             window.enableAutoscroll = false; 
         }
 
