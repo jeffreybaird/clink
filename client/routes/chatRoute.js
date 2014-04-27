@@ -9,13 +9,6 @@ var ChatController = RouteController.extend({
 
 		if (Session.get('chats_loaded')) {
 			var chat = Chat.findOne({name: chatName});
-			var messages = chat.messages;
-			var users = [];
-			for (var i = 0; i < messages.length; i++) {
-				if($.inArray(messages[i].name, users) < 0){
-				 users.push(messages[i].name);
-				}
-			};
 
 			if(typeof chat == "undefined"){
 				chat = Chat.insert({name: chatName, messages: [{name:"The Clinkbot", message:"Welcome to the chatroom!"}]}, function(error, result) {
@@ -23,6 +16,13 @@ var ChatController = RouteController.extend({
 				});
 			} else {
 				// only do this on existing chats
+				var messages = chat.messages;
+				var users = [];
+				for (var i = 0; i < messages.length; i++) {
+					if($.inArray(messages[i].name, users) < 0){
+					 users.push(messages[i].name);
+					}
+				};
 				chat.numberOfUsers = users.length;
 			}
 
