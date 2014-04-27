@@ -80,6 +80,5 @@ Template.chat.extras = {
             var ourLastChatRecord = $('.msg-container').last();
         }
         $('#message').val('');  // reset the message
-
     }
 };
