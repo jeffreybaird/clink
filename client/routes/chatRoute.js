@@ -5,8 +5,7 @@ var ChatController = RouteController.extend({
         chat = Chat.findOne({name: chatName});
         console.log('here' + chat);
         if(typeof chat == "undefined"){
-                console.log('creating new chat');
-          chat = Chat.insert({name: chatName, messages: [{message:"This is you initial test message"}]}, function(error, result) {
+          chat = Chat.insert({name: chatName, messages: [{name:"System", message:"This is you initial test message"}]}, function(error, result) {
             console.log(error,result);
           });
         }
