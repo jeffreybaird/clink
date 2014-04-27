@@ -73,7 +73,7 @@ Template.chat.extras = {
         message = message.replace(/(<([^>]+)>)/ig,"");
         if (message != '') {
             Chat.update({_id: Session.get("id")}, {$push:{messages:{name: nickname, message: message, time: new Date}}}, null, function() {
-                console.log('scroll code goes here');
+               // console.log('scroll code goes here');
             });
             var ourLastChatRecord = $('.msg-container').last();
         }
