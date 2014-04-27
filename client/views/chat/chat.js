@@ -20,7 +20,7 @@ Template['chat'].events({
       var name = Session.get('nickname') || document.getElementById('nickname').value ;
       var message = document.getElementById('message');
       if (message.value != '') {
-        Chat.update({_id: Session.get("id")}, {$push:{messages:{name: name, message: message.value}}});
+        Chat.update({_id: Session.get("id")}, {$push:{messages:{name: name, message: message.value, time: new Date}}});
         document.getElementById('message').value = '';
         message.value = '';
       }
