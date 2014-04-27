@@ -3,7 +3,7 @@ Template['chat'].helpers({
         return Session.get("name")
     },
     nickname: function(){
-        return Session.get('nickname') || 'Anonymous'
+        return Session.get('nickname');
     },
     prettyTime: function(datetime){
         if(typeof datetime === 'object'){
@@ -43,8 +43,8 @@ Template.chat.rendered = function () {
     // set the nickname, if not set
     var nickname = Session.get("nickname");
     if (typeof nickname == 'undefined') {
+        // is set on startup; we set it here if the startup routine hasn't run yet
         $('#nickname').val('Anonymous');
-        Session.set("nickname", nickname);
     }
 
     // resize
@@ -62,12 +62,14 @@ Template.chat.rendered = function () {
 Template.chat.extras = {
     updateNickname: function() {
         var nickname = $('#nickname').val();
-        Session.set("nickname", nickname);
-        ReactiveStore.set("clink-nickname", nickname);
-        $('.chat-options').addClass('hide');    // hide the options
+        if (nickname != '') {
+            Session.set("nickname", nickname);
+            ReactiveStore.set("clink-nickname", nickname);
+            $('.chat-options').addClass('hide');    // hide the options
+        }
     },
     enterMessage: function() {
-        var nickname = Session.get("nickname") || "Anonymous";
+        var nickname = Session.get("nickname");
         var message = $('#message').val();
         // Strip out HTML tags
         message = message.replace(/(<([^>]+)>)/ig,"");

@@ -5,5 +5,7 @@ Meteor.startup(function () {
     var nickname = ReactiveStore.get('clink-nickname');
     if(typeof nickname != "undefined") {
 	    Session.set("nickname", nickname);
+    } else {
+    	Session.set("nickname", 'Anonymous');
     }
 });
