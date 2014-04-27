@@ -1,7 +1,39 @@
 <template name="chat">
-    <strong>{{name}}</strong><br>
-    {{#each messages}}
-      {{message}}<br>
-    {{/each}}
-    <p>Message: <input type="text" id="message"></p>
+	<div class="container-fluid">
+		<strong>{{name}}</strong>
+		<div class="inner-app-wrap">
+			<div class="messages-container">
+				<div class="messages">
+				    {{#each messages}}
+					    <div class="msg-container">
+					    	<div class="msg-inner-container">
+					    		<div class="">
+					    			<div class="usr">
+					    				<div>
+										    <div class="usr-nm">
+										    	<strong>User Name:</strong>	
+							  				</div>
+							  			</div>
+							  		</div>
+							  		<div class="msg">
+						  				<div class="msgid-container">
+									    	<div class="msgid">	
+									      		{{message}}
+									      	</div>
+									     </div>
+					    			</div>
+					    		</div>
+					    	</div>
+					    </div>
+				    {{/each}}
+				</div>
+			</div>	
+			<div id="chat-message-input-container">
+				<div id="chat-message-input">
+			  	  <input id="message" placeholder="Message">
+			  	</div>
+			</div>
+		</div>
+	</div>
+
 </template>
