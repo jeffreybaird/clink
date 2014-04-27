@@ -23,7 +23,7 @@ var ChatController = RouteController.extend({
 Router.map(function () {
     this.route('chat', {
         path :  '/c/:name',
-        data : function() { return this.findOrCreateChat(this.params.name); },
+        data : function() { return this.findOrCreateChat(this.params.name.toLowerCase()); },
         controller :  ChatController
     });
 });
