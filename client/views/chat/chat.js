@@ -64,6 +64,7 @@ Template.chat.extras = {
         var nickname = $('#nickname').val();
         Session.set("nickname", nickname);
         ReactiveStore.set("clink-nickname", nickname);
+        $('.chat-options').addClass('hide');    // hide the options
     },
     enterMessage: function() {
         var nickname = Session.get("nickname");
