@@ -1,7 +1,13 @@
 Template['home'].helpers({
   url: function(){
-    var hex = Math.floor(Math.random() * 1000000000).toString(16);
-    return "http://clinkit.co/c/" + hex
+    var hex = Math.floor(Math.random() * 10000000).toString(16);
+
+    hostname = window.location.hostname;
+    if (hostname != 'clinkit.co') {
+        hostname = hostname + ":3000";
+    }
+
+    return "http://" + hostname + "/c/" + hex;
   },
 });
 
