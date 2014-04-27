@@ -20,6 +20,8 @@ Template['chat'].events({
 });
 
 Template.chat.rendered = function () {
-
+    var ourWindowHeight = $(window).height();
+    $('.messages-container').css("height", ourWindowHeight - 250);
+    console.log(ourWindowHeight);
 }
 
