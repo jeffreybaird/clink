@@ -1,6 +1,13 @@
 <template name="chat">
 	<div class="container-fluid">
-		<strong>{{nickname}} @ {{name}}</strong>
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="room-display-name center">{{name}}</h1>
+			</div>
+			<div class="col-sm-2">
+				<div><input class="form-control" type="text" id="nickname" placeholder="{{nickname}}"></div>
+			</div>
+		</div>
 		<div class="inner-app-wrap">
 			<div class="messages-container">
 				<div class="messages">
@@ -29,10 +36,20 @@
 				</div>
 			</div>
 			<div id="chat-message-input-container">
-				<div id="chat-message-input">
-			  	  <input id="message" placeholder="Message"><button type="button" class="btn btn-bluebird" id="sendMessage">Send</button>
-			  	  <input type="text" id="nickname" placeholder="Nickname">
-			  	</div>
+				<div class="row">
+					<div class="col-sm-12">
+					<div class="input-group">
+							<input class="form-control" id="message" placeholder="Message">
+							<span class="input-group-btn">
+								<button class="btn btn-info" type="button">Send</button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<!-- <div id="chat-message-input">
+			  	  <input class="form-control" id="message" placeholder="Message">
+			  	  <button type="button" class="btn btn-default" id="sendMessage">Send</button>
+			  	</div> -->
   			</div>
 
 		</div>
