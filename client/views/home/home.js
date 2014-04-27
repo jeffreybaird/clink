@@ -11,5 +11,8 @@ Template['home'].events({
             $('.share-url-wrap').removeClass('hide').fadeIn('fast');
         });
         // $('.share-url-wrap').removeClass('hide').fadeIn('fast');
+    },
+    'click .btn-punch': function(e) {
+        window.location.href = $('.share-this-url').val();
     }
 });

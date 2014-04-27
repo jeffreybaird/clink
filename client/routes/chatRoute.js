@@ -12,7 +12,7 @@ var ChatController = RouteController.extend({
         chat = Chat.findOne({name: chatName});
         if(typeof chat == "undefined"){
           chat = Chat.insert({name: chatName, messages: [{name:"The Clinkbot", message:"Welcome to the chatroom!"}]}, function(error, result) {
-            console.log(error,result);
+           // console.log(error,result);
           });
         }
         Session.set("id", chat._id);
