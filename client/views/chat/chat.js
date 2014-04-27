@@ -24,6 +24,8 @@ Template['chat'].events({
         document.getElementById('message').value = '';
         message.value = '';
       }
+      var ourLastChatRecord = $('.msg-container').last();
+      $('.messages-container').animate({scrollTop: $('.msg-container').last().offset().top});
     }
   },
   'keydown #nickname' : function (event) {
@@ -37,6 +39,8 @@ Template['chat'].events({
 });
 
 Template.chat.rendered = function () {
-
+    var ourWindowHeight = $(window).height();
+    $('.messages-container').css("height", ourWindowHeight - 250);
+    console.log(ourWindowHeight);
 }
 

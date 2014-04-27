@@ -1,10 +1,42 @@
 <template name="chat">
-    <strong>{{nickname}} @ {{name}}</strong><br>
-    {{#each messages}}
-      <strong>{{name}}</strong> {{message}}<br>
-    {{/each}}
-    <div>
-    <p>Message: <input type="text" id="message"></p>
-    <p>Nickname: <input type="text" id="nickname" value="{{nickname}}"></p>
-    </div>
+	<div class="container-fluid">
+		<strong>{{nickname}} @ {{name}}</strong>
+		<div class="inner-app-wrap">
+			<div class="messages-container">
+				<div class="messages">
+				    {{#each messages}}
+					    <div class="msg-container">
+					    	<div class="msg-inner-container">
+					    		<div class="">
+					    			<div class="usr">
+					    				<div>
+										    <div class="usr-nm">
+										    	<strong>{{nickname}}:</strong>
+							  				</div>
+							  			</div>
+							  		</div>
+							  		<div class="msg">
+						  				<div class="msgid-container">
+									    	<div class="msgid">
+									      		{{message}}
+									      	</div>
+									     </div>
+					    			</div>
+					    		</div>
+					    	</div>
+					    </div>
+				    {{/each}}
+				</div>
+			</div>
+			<div id="chat-message-input-container">
+				<div id="chat-message-input">
+			  	  <input id="message" placeholder="Message">
+			  	</div>
+        <div>
+          <p>Nickname: <input type="text" id="nickname" value="{{nickname}}"></p>
+        </div>
+			</div>
+		</div>
+	</div>
+
 </template>
