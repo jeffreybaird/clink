@@ -64,6 +64,7 @@ Template.chat.extras = {
         var nickname = $('#nickname').val();
         Session.set("nickname", nickname);
         ReactiveStore.set("clink-nickname", nickname);
+        $('.chat-options').addClass('hide');    // hide the options
     },
     enterMessage: function() {
         var nickname = Session.get("nickname");
@@ -71,7 +72,9 @@ Template.chat.extras = {
         // Strip out HTML tags
         message = message.replace(/(<([^>]+)>)/ig,"");
         if (message != '') {
-            Chat.update({_id: Session.get("id")}, {$push:{messages:{name: nickname, message: message, time: new Date}}});
+            Chat.update({_id: Session.get("id")}, {$push:{messages:{name: nickname, message: message, time: new Date}}}, null, function() {
+               // console.log('scroll code goes here');
+            });
             var ourLastChatRecord = $('.msg-container').last();
         }
         $('#message').val('');  // reset the message
