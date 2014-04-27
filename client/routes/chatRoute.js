@@ -10,7 +10,7 @@ var ChatController = RouteController.extend({
       if (Session.get('chats_loaded')) {
         chat = Chat.findOne({name: chatName});
         if(typeof chat == "undefined"){
-          chat = Chat.insert({name: chatName, messages: [{name:"System", message:"This is you initial test message"}]}, function(error, result) {
+          chat = Chat.insert({name: chatName, messages: [{name:"System", message:"This is your initial test message"}]}, function(error, result) {
             console.log(error,result);
           });
         }
