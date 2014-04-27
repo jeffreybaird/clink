@@ -39,8 +39,10 @@ Template['chat'].events({
 });
 
 Template.chat.rendered = function () {
-    var ourWindowHeight = $(window).height();
-    $('.messages-container').css("height", ourWindowHeight - 250);
-    console.log(ourWindowHeight);
+     $(window).resize(function(){
+      var ourWindowHeight = $(window).height();
+      console.log(ourWindowHeight);
+      $('.messages-container').css("height", ourWindowHeight - 250);
+    });
 }
 
