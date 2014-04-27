@@ -5,6 +5,9 @@ Chat = new Meteor.Collection2('chat', {
             max: 200,
             optional: true
         },
+        "messages.$.name": {
+            type: String,
+        },
         "messages.$.message": {
           type: String,
         }

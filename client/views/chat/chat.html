@@ -1,6 +1,6 @@
 <template name="chat">
 	<div class="container-fluid">
-		<strong>{{name}}</strong>
+		<strong>{{nickname}} @ {{name}}</strong>
 		<div class="inner-app-wrap">
 			<div class="messages-container">
 				<div class="messages">
@@ -11,13 +11,13 @@
 					    			<div class="usr">
 					    				<div>
 										    <div class="usr-nm">
-										    	<strong>user name:</strong>	
+										    	<strong>{{name}}:</strong>
 							  				</div>
 							  			</div>
 							  		</div>
 							  		<div class="msg">
 						  				<div class="msgid-container">
-									    	<div class="msgid">	
+									    	<div class="msgid">
 									      		{{message}}
 									      	</div>
 									     </div>
@@ -27,11 +27,14 @@
 					    </div>
 				    {{/each}}
 				</div>
-			</div>	
+			</div>
 			<div id="chat-message-input-container">
 				<div id="chat-message-input">
 			  	  <input id="message" placeholder="Message">
 			  	</div>
+        <div>
+          <p>Nickname: <input type="text" id="nickname" value="{{nickname}}"></p>
+        </div>
 			</div>
 		</div>
 	</div>
