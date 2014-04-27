@@ -49,14 +49,39 @@ Template.chat.rendered = function () {
 
     // resize
      $(window).resize(function(){
-        var ourWindowHeight = $(window).height();
-        $('.messages-container').css("height", ourWindowHeight);
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
     });
     $('#message').focus();
     $('.toggle-name-input').click(function(e) {
         e.preventDefault();
         $('.chat-options').toggleClass('hide');
     });
+
+    var currentMessageCount;
+
+    setTimeout(function(currentMessageCount) {
+      
+      currentMessageCount = $('.msg-container').length;
+      var messageCheckInterval = setInterval(checkMessageCount, 2000);
+      function checkMessageCount() {
+        var newMessageCount = $('.msg-container').length;
+        
+        // // do some stuff...
+        if (newMessageCount !== currentMessageCount) {
+            var newMessageContent = '<div class="new-message-indicator center">new messages available</div>';
+            $(newMessageContent).appendTo('body').fadeIn('fast');
+            console.log('hit');
+            currentMessageCount = newMessageCount;
+        }
+        
+        // no need to recall the function (it's an interval, it'll loop forever)
+      }
+    }, 2000);
+
+    
+    function abortTimer() { // to be called when you want to stop the timer
+      clearInterval(messageCheckInterval);
+    }
 }
 
 Template.chat.extras = {
@@ -78,6 +103,7 @@ Template.chat.extras = {
             var ourLastChatRecord = $('.msg-container').last();
         }
         $('#message').val('');  // reset the message
+        $('.new-message-indicator').remove();
 
     }
 };
