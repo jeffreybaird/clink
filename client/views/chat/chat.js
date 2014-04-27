@@ -42,9 +42,17 @@ Template['chat'].events({
 Template.chat.rendered = function () {
     // set the nickname, if not set
     var nickname = Session.get("nickname");
-    if (typeof nickname == 'undefined') {
+    if (typeof nickname == 'undefined' || nickname == 'Anonymous') {
+        bootbox.prompt("What's your name, friend?", function(result) {                
+          if (result === null) {                                             
+            $('#nickname').val('Anonymous');
+          } else {
+            $('#nickname').val(result);
+            Template.chat.extras.updateNickname();
+          }
+    });
         // is set on startup; we set it here if the startup routine hasn't run yet
-        $('#nickname').val('Anonymous');
+        
     }
 
     $('#message').focus();
