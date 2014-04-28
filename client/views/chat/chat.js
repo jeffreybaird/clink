@@ -75,7 +75,7 @@ Template.chat.rendered = function () {
         }
 
         // enable autoscroll, only on desktop
-        if ((docHeight - height < 600) && width > 600) {
+        if ((docHeight - height < 600) && (width > 600)) {
             window.enableAutoscroll = true;
         }
 
