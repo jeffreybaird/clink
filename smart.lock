@@ -7,7 +7,8 @@
       "iron-router-progress": {},
       "semantic-ui": {},
       "collection2": {},
-      "reactive-store": {}
+      "reactive-store": {},
+      "bootboxjs": {}
     },
     "packages": {
       "iron-router": {
@@ -40,6 +41,11 @@
         "tag": "v0.0.1",
         "commit": "18a945ff0d1a449938f35afd2bbbf09d1ecd322a"
       },
+      "bootboxjs": {
+        "git": "https://github.com/TimHeckel/meteor-bootboxjs.git",
+        "tag": "v4.2.0",
+        "commit": "2b7d18ad028d9e7b37238ecf2a8a7970735cebd1"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.4",
@@ -49,6 +55,11 @@
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
         "tag": "v0.4.0",
         "commit": "2cc6aac0d35a4e00b065c1437d540b2aefba5241"
+      },
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v3.1.1-1",
+        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
       }
     }
   }

@@ -40,11 +40,20 @@ Template['chat'].events({
 });
 
 Template.chat.rendered = function () {
+
     // set the nickname, if not set
     var nickname = Session.get("nickname");
-    if (typeof nickname == 'undefined') {
+    if (typeof nickname == 'undefined' || nickname == 'Anonymous') {
+        bootbox.prompt("What's your name, friend?", function(result) {                
+          if (result === null) {                                             
+            $('#nickname').val('Anonymous');
+          } else {
+            $('#nickname').val(result);
+            Template.chat.extras.updateNickname();
+          }
+    });
         // is set on startup; we set it here if the startup routine hasn't run yet
-        $('#nickname').val('Anonymous');
+        
     }
 
     $('#message').focus();
@@ -53,31 +62,28 @@ Template.chat.rendered = function () {
         $('.chat-options').toggleClass('hide');
     });
 
-    var currentMessageCount;
-
-    setTimeout(function(currentMessageCount) {
-      
-      currentMessageCount = $('.msg-container').length;
-      var messageCheckInterval = setInterval(checkMessageCount, 2000);
-      function checkMessageCount() {
-        var newMessageCount = $('.msg-container').length;
+    // disable auto-scrolling if they scroll up
+    $(window).scroll(function(){ 
         
-        // // do some stuff...
-        if (newMessageCount !== currentMessageCount) {
-            var newMessageContent = '<div class="new-message-indicator center">new messages available</div>';
-            $(newMessageContent).appendTo('body').fadeIn('fast');
-            console.log('hit');
-            currentMessageCount = newMessageCount;
+        var height = $(window).scrollTop();
+        var docHeight = $(document).height();
+
+//         console.log("H" + height + " DH:" +  docHeight + " WH:" + winHeight);
+        if (docHeight - height > 850) {
+            window.enableAutoscroll = false; 
         }
-        
-        // no need to recall the function (it's an interval, it'll loop forever)
-      }
-    }, 2000);
 
-    
-    function abortTimer() { // to be called when you want to stop the timer
-      clearInterval(messageCheckInterval);
-    }
+        if (docHeight - height < 600) {
+            window.enableAutoscroll = true;
+        }
+
+    });
+
+    setInterval(function(){
+        if (window.enableAutoscroll) {
+            $("html, body").animate({ scrollTop: $(document).height()-$(window).height() })
+        }
+    }, 1500);
 }
 
 Template.chat.extras = {
