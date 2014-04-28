@@ -67,13 +67,15 @@ Template.chat.rendered = function () {
         
         var height = $(window).scrollTop();
         var docHeight = $(document).height();
+        var width = $(window).width();
 
 //         console.log("H" + height + " DH:" +  docHeight + " WH:" + winHeight);
         if (docHeight - height > 850) {
             window.enableAutoscroll = false; 
         }
 
-        if (docHeight - height < 600) {
+        // enable autoscroll, only on desktop
+        if ((docHeight - height < 600) && width > 600) {
             window.enableAutoscroll = true;
         }
 
